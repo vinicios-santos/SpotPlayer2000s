@@ -44,6 +44,8 @@ let indexMusic = 0;
 document.querySelector('.play').addEventListener('click', playMusic);
 document.querySelector('.pause').addEventListener('click', pauseMusic);
 document.querySelector('.back').addEventListener('click', () => {
+    document.querySelector('.pause').style.display = 'none';
+    document.querySelector('.play').style.display = 'inline';
     indexMusic--;
     if(indexMusic < 0){
         indexMusic = 3;
@@ -51,6 +53,8 @@ document.querySelector('.back').addEventListener('click', () => {
     renderMusic(indexMusic);
 });
 document.querySelector('.next').addEventListener('click', () => {
+    document.querySelector('.pause').style.display = 'none';
+    document.querySelector('.play').style.display = 'inline';
     indexMusic++;
     if(indexMusic > 3){
         indexMusic = 0;
